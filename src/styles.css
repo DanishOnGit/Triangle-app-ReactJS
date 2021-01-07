@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+*{
+  margin: 0;
+  padding:0;
+  --primary-color:rgb(133, 10, 248);
+  --secondary-color:rgb(243, 113, 26);
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+}
+body{
+  background-color:black;
+}
+h1{
+  color: white;
+  margin-bottom: 1rem;
+}
+.homepageDiv {
+  margin-top: 20%;
+  text-align: center;
+  
+}
+.introDiv{
+  text-align: center;
+  margin-top:20%;
+}
+.mainMenuDiv{
+position: relative;
+  width:17rem;
+  display:flex;
+  /* background-color: pink; */
+  flex-wrap:wrap;
+  margin:auto;
+  
+  color: var(--secondary-color);
+  top:10vh
+}
+.div1,.div2,.div3,.div4{
+  width:4rem;
+  height:2rem;
+  padding:2.1rem;
+  background-color:var(--primary-color);
+  border:1px solid black;
+  cursor:pointer;
+  border-radius: 1rem;
+}
+.div1,.div4{
+  background-color: purple
+}
+.div1 :hover{
+background-color: rgb(44, 78, 230)
+}
+input{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+button{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+border: none;
+margin-top: 1rem
+}
+.usefulBtn{
+  padding:0.5rem 1.5rem;
+margin-left: 1.5rem;
+border-radius: 0.5rem;
+border:none;
+background-color: var(--primary-color);
+color: var(--secondary-color);
+}
+.introBtns{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding:0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+margin-top: 1rem;
+
+}
+
+
+.backPara{
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.trianglePage div{
+  padding: 0.5rem;
+}
+.hypotenusePage div{
+  padding: 0.5rem;
+}
+.output{
+  width: 100%;
+  text-align: center;
+/* background-color: pink; */
+}
+p{
+  text-align: center;
+  margin-top: 1rem;
+}
+.resultPara{
+  color: white;
+}
+label{
+  color: white;
+}
+
+.questionList{
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: rgb(71, 29, 36);
+  border-radius: 0.2rem;
+}
+.quesNos{
+  color: var(--secondary-color);
+}
+.label{
+  padding:1rem;
+  margin-top: 1rem;
+}
+.areaMainDiv{
+  text-align: center;
+  /* margin: auto; */
+  /* background-color: lightskyblue; */
+  margin-bottom: 2rem;
+}
+.areaType{
+  margin-bottom: 1rem;
+  /* background-color: pink; */
+  /* width:500px; */
+margin: auto;
+width: 25vw;
+ 
+}
+.areaTypeParentDiv{
+/* background-color: navy; */
+/* width:60vw ; */
+margin: auto;
+text-align: left;
+}
+.areaOneDiv,.areaTwoDiv,.areaThreeDiv{
+  text-align: center;
+/* width: 60vw; */
+margin: auto;
+}
+#angle{
+padding: 0.5rem 1.9rem;
+}
+.submitBtn{
+
+display: block;
+margin: auto;
+
+}
+.quesListWrap .questionList{
+  text-align: center;
+}
+.areaBtn{
+  margin-left: 0.8rem;
+}
+
+@media only screen and (max-width:600px){
+
+  .areaType{
+    width:50vw;
+  }
+  .fitLabel{
+    display: block;
+    padding: 0;
+    padding-left: 1rem;
+    
+    }
+    .quesListWrap .questionList{
+      text-align: left;
+    }
+    
+}
+
+
+
