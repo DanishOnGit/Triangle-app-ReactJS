@@ -43,6 +43,7 @@ position: relative;
   border:1px solid black;
   cursor:pointer;
   border-radius: 1rem;
+  transition: 150ms ease-out;
 }
 .div1,.div4{
   background-color: purple
