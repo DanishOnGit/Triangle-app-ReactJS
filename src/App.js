@@ -39,7 +39,7 @@ const[hideQuizPage,setHideQuizPage]=useState("block")
 
 
 //take user name
-function nameHandler(){
+function nameHandler(event){
 userName=event.target.value
 }
 
