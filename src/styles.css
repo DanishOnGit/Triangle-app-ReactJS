@@ -47,9 +47,11 @@ position: relative;
 .div1,.div4{
   background-color: purple
 }
-.div1 :hover{
-background-color: rgb(44, 78, 230)
-}
+.div1:hover ,.div2:hover,.div3:hover,.div4:hover{
+  color:white;
+  transition: 150ms ease-in-out;
+  font-size: 1.1rem  ;
+  }
 input{
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -79,11 +81,19 @@ color: var(--secondary-color);
 margin-top: 1rem;
 
 }
+button:hover{
+  color: white;
+  transition: 150ms;
+}
 
 
 .backPara{
   color: var(--primary-color);
   text-decoration: underline;
+}
+.backPara:hover{
+  color: white;
+  transition: 150ms;
 }
 
 .trianglePage div{
