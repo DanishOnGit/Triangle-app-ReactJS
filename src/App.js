@@ -6,9 +6,9 @@ import "./styles.css";
 
 
 
-var secondColor="rgb(214, 43, 43)"
-var userName;
-var inputAngleOfTriangleArray=[]
+const secondColor="rgb(214, 43, 43)"
+let userName;
+let inputAngleOfTriangleArray=[]
 
 export default function App() {
 
@@ -16,7 +16,6 @@ const[intro,setIntro]=useState("")
 const[homePagehide,setHomePageHide]=useState("block")
 const[introDivHide,setIntroDivHide]=useState("block")
 const[mainMenu,setMainMenu]=useState("")
-
 const[trianglePage,setTrianglePage]=useState("")
 const[hideMainMenu,setHideMainMenu]=useState("flex")
 const[triangleResultCheck,setTriangleResultCheck]=useState("")
@@ -51,7 +50,7 @@ function clickHandler(e){
 
   setHomePageHide("none")
 
-  var newIntro= <div>
+  let newIntro= <div>
 <h1>Hello <span style={{color:"rgb(133, 10, 248)"}}>{userName.toUpperCase()}</span>! Lets start learning about triangles. </h1>
 <button className="introBtns" onClick={startLearningClickHandler}>Start Learning!</button>
   </div>
@@ -65,7 +64,7 @@ function startLearningClickHandler(){
 setIntroDivHide("none")
 
 
-  var chooseMenu=<div className="mainMenuDiv" style={{display:hideMainMenu }} id="mainMenu">
+ let chooseMenu=<div className="mainMenuDiv" style={{display:hideMainMenu }} id="mainMenu">
   
   <div className="div1" onClick={isItTriangle} >Is it a Triangle?</div>
   <div className="div2" onClick={findHypotenuse} >Find hypotenuse.</div>
@@ -83,7 +82,7 @@ function isItTriangle(){
   setHideMainMenu("none")
   setHideTriangleCheckPage("block")
 
-  var showTrianglePage=<div className="trianglePage" >
+ let showTrianglePage=<div className="trianglePage" >
 <p onClick={BackToMainMenuClickHandler} style={{cursor:"pointer"}} className="backPara">Back to Main Menu</p><br/>
 
     <form action="" method="GET" onSubmit={checkForTriangle}>
@@ -116,24 +115,24 @@ function checkForTriangle(e){
   setHideTriangleResultCheck("block")
   e.preventDefault();
 
-  var inputAngleArray=document.querySelectorAll(".inputAngle")
+  let inputAngleArray=document.querySelectorAll(".inputAngle")
 
-  for(var i=0;i<inputAngleArray.length;i++){
+  for(let i=0;i<inputAngleArray.length;i++){
 inputAngleOfTriangleArray[i]=Number(inputAngleArray[i].value)
   }
-  var sum=0;
+  let sum=0;
 inputAngleOfTriangleArray.map((angle)=>{
 sum=sum+angle;
 
 })
 if(sum===180){
-var result=<div>
+let result=<div>
 <p className="resultPara">Yess! {userName}. THese angles make a triangle</p>
 
 
 </div>
 }else{
-  var result=
+  let result=
   <div>
 <p className="resultPara">No! {userName}. THese angles do not make a triangle.</p>
 
@@ -149,7 +148,7 @@ function findHypotenuse(){
   setHideMainMenu("none")
   setHideHypotenusePage("block")
 
-  var showHypotenusePage=<div className="hypotenusePage">
+  let showHypotenusePage=<div className="hypotenusePage">
 <p onClick={BackToMainMenuClickHandler} style={{cursor:"pointer"}} className="backPara">Back to Main Menu</p><br/>
     <form method="GET" onSubmit={calculateHypotenuse} >
       <div>
@@ -176,11 +175,11 @@ function calculateHypotenuse(e){
   setHideHypotenuseResultCheckPage("block")
   e.preventDefault()
 
-  var x=Number(document.getElementById("side1").value)
-  var y=Number(document.getElementById("side2").value)
-  var hypo=Math.sqrt(x*x+y*y)
+  let x=Number(document.getElementById("side1").value)
+ let y=Number(document.getElementById("side2").value)
+  let hypo=Math.sqrt(x*x+y*y)
   
-var result=<div>
+let result=<div>
   <p className="resultPara">Hypotenuse of the triangle is {hypo}</p>
 
 </div>
@@ -193,7 +192,7 @@ function findArea(){
 setHideMainMenu("none")
 setHideAreaPage("block")
 
-var findAreaPage=<div className="areaPage">
+let findAreaPage=<div className="areaPage">
   <p onClick={BackToMainMenuClickHandler} style={{cursor:"pointer"}} className="backPara">Back to Main Menu</p><br/>
 <p style={{color:"white"}}><span style={{color:"rgb(133, 10, 248)"}}>{userName}</span> you can select any of the following.</p><br/>
 <form method="GET">
@@ -225,7 +224,7 @@ function checkArea1(){
   setHideArea3Div("none")
 
 
-var areaOutput=<div className="areaOneDiv">
+let areaOutput=<div className="areaOneDiv">
 <form method="GET" onSubmit={checkArea1Result} >
   <div>
   <label for="base">Enter base: </label>
@@ -247,10 +246,10 @@ setArea1Div(areaOutput)
 
 function checkArea1Result(e){
   e.preventDefault()
-  var x=document.getElementById("base").value;
-  var y=document.getElementById("height").value;
+  let x=document.getElementById("base").value;
+  let y=document.getElementById("height").value;
   console.log(x)
-var finalArea=1/2*x*y
+let finalArea=1/2*x*y
   document.getElementById("area1Output").innerText=finalArea+" sq. units";
 }
 
@@ -260,7 +259,7 @@ function checkArea2(){
   setHideArea3Div("none")
   setHideArea1Div("none")
 
-  var areaOutput=<div className="areaTwoDiv">
+  let areaOutput=<div className="areaTwoDiv">
 <form method="GET" onSubmit={checkArea2Result}  >
   <div>
   <label for="1stside">Enter side 1: </label>
@@ -286,10 +285,10 @@ setArea2Div(areaOutput)
 }
 function checkArea2Result(e){
   e.preventDefault();
-  var x=document.getElementById("1stside").value;
-  var y=document.getElementById("2ndside").value;
-var z=document.getElementById("angle").value;
-var finalArea= (x*y*Math.sin(z*Math.PI/180))/2;
+  let x=document.getElementById("1stside").value;
+  let y=document.getElementById("2ndside").value;
+let z=document.getElementById("angle").value;
+let finalArea= (x*y*Math.sin(z*Math.PI/180))/2;
 
 document.getElementById("area2Output").innerText=finalArea+" sq. units"
 }
@@ -300,7 +299,7 @@ setHideArea1Div("none")
 setHideArea2Div("none")
 setHideArea3Div("block")
 
-var areaOutput=<div className="areaThreeDiv">
+let areaOutput=<div className="areaThreeDiv">
 <form method="GET" onSubmit={checkArea3Result}  >
   <div>
   <label for="triSide1">Enter side 1 : </label>
@@ -327,14 +326,14 @@ setArea3Div(areaOutput)
 
 function checkArea3Result(e){
   e.preventDefault();
-  var x=Number(document.getElementById("triSide1").value)
-  var y=Number(document.getElementById("triSide2").value)
-  var z=Number(document.getElementById("triSide3").value)
+  let x=Number(document.getElementById("triSide1").value)
+  let y=Number(document.getElementById("triSide2").value)
+  let z=Number(document.getElementById("triSide3").value)
   console.log(x,y,z)
   if((x+y)>z &&(y+z)>x && (x+z)>y){
-    var s=(x+y+z)/2;
+    let s=(x+y+z)/2;
   
-    var finalArea=Math.sqrt(s*(s-x)*(s-y)*(s-z))
+   let finalArea=Math.sqrt(s*(s-x)*(s-y)*(s-z))
     document.getElementById("area3Output").innerText=finalArea+" sq. units"}
   
 else{
@@ -348,7 +347,7 @@ function takeQuiz(){
 setHideMainMenu("none")
 setHideQuizPage("block")
 
-var showQuizPage=<div className="quesListWrap" >
+let showQuizPage=<div className="quesListWrap" >
 <form method="GET" onSubmit={checkquizResult} id="quizForm" name="quiz">
   <div className="questionList">
 <label className="quesNos">1. If a triangle has angles 135<sup>0</sup>, 15<sup>0</sup>, 30<sup>0</sup>. Is it an obtuse triangle?</label><br/>
@@ -454,7 +453,7 @@ setquizPage(showQuizPage)
 }
 function checkquizResult(e){
   e.preventDefault();
-var correctAns=["option1", "option2", "option1", "option1", "option1", "option2", "option2", "option3", "option3", "option3"];
+let correctAns=["option1", "option2", "option1", "option1", "option1", "option2", "option2", "option3", "option3", "option3"];
 
 const form=document.forms.quiz
 
@@ -462,8 +461,8 @@ const form=document.forms.quiz
 const radioList=[form.elements.options1,form.elements.options2,form.elements.options3,form.elements.options4,form.elements.options5,form.elements.options6,form.elements.options7,form.elements.options8,form.elements.options9,
 form.elements.options10]
 
-var score=0;
-for(var i=0;i<radioList.length;i++){
+let score=0;
+for(let i=0;i<radioList.length;i++){
   const quesDivs=document.getElementsByClassName("questionList")
 
 if(radioList[i].value===correctAns[i]){
